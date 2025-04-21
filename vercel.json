@@ -60,6 +60,7 @@
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/favicon.png", "destination": "/favicon.png" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/404.html", "destination": "/404.html" },
+    { "source": "/((?!404).*)", "destination": "/index.html" }
   ]
 }
