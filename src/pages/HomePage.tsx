@@ -30,6 +30,7 @@ import {
 import { Helmet } from 'react-helmet-async';
 import { lazy, Suspense } from 'react';
 
+// Lazy load the HeroAnimation component
 const HeroAnimation = lazy(() => import('../components/HeroAnimation'));
 
 // Variants for animation container
@@ -56,21 +57,20 @@ const HomePage = () => {
     <>
       {/* SEO Meta Tags */}
       <Helmet>
-  <title>
-    KHWebDesign | Affordable HTML Websites – Fast, SEO & Mobile-Friendly
-  </title>
-  <meta
-    name="description"
-    content="Custom web development services designed to help your business grow online with modern, responsive, and SEO-optimized websites."
-  />
-  {/* Add this for preloading fonts */}
-  <link
-    rel="preload"
-    href="https://fonts.googleapis.com/css2?family=YourFont"
-    as="style"
-  />
-</Helmet>
-      
+        <title>
+          KHWebDesign | Affordable HTML Websites – Fast, SEO & Mobile-Friendly
+        </title>
+        <meta
+          name="description"
+          content="Custom web development services designed to help your business grow online with modern, responsive, and SEO-optimized websites."
+        />
+        {/* Preload critical fonts */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=YourFont"
+          as="style"
+        />
+      </Helmet>
 
       {/* HERO SECTION */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
@@ -79,14 +79,14 @@ const HomePage = () => {
             {/* Hero Text Content */}
             <div>
               <motion.h1
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: window.innerWidth < 768 ? 0.3 : 0.4 }} // Faster on mobile
-  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
->
-  Custom Websites Designed to{' '}
-  <span className="text-accent-400">Elevate</span> Your Business
-</motion.h1>
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: window.innerWidth < 768 ? 0.3 : 0.4 }} // Faster on mobile
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
+              >
+                Custom Websites Designed to{' '}
+                <span className="text-accent-400">Elevate</span> Your Business
+              </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -111,16 +111,19 @@ const HomePage = () => {
                 >
                   Get In Touch
                 </Link>
-              <motion.div
-  initial={{ opacity: 0, scale: 0.9 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  className="relative flex justify-center items-center"
->
-  <Suspense fallback={<div>Loading Animation...</div>}>
-    <HeroAnimation />
-  </Suspense>
-</motion.div>
+              </motion.div>
+            </div>
+            {/* Hero Animation */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative flex justify-center items-center"
+            >
+              <Suspense fallback={<div>Loading Animation...</div>}>
+                <HeroAnimation />
+              </Suspense>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -263,7 +266,7 @@ const HomePage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Feature Card: Affordable Pricing */}
+            {/* Feature Cards */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -282,66 +285,7 @@ const HomePage = () => {
                 websites accessible for businesses of all sizes.
               </p>
             </motion.div>
-
-            {/* Feature Card: Fast Turnaround */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
-                  <Rocket size={20} />
-                </div>
-                <h3 className="text-xl font-semibold">Fast Turnaround</h3>
-              </div>
-              <p className="text-secondary-600">
-                Quick delivery without compromising quality, getting your website live
-                and generating results faster.
-              </p>
-            </motion.div>
-
-            {/* Feature Card: Reliability */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
-                  <Shield size={20} />
-                </div>
-                <h3 className="text-xl font-semibold">Reliability</h3>
-              </div>
-              <p className="text-secondary-600">
-                Consistent communication and dependable support throughout the
-                development process and beyond.
-              </p>
-            </motion.div>
-
-            {/* Feature Card: Clean Code */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
-                  <Code size={20} />
-                </div>
-                <h3 className="text-xl font-semibold">Clean Code</h3>
-              </div>
-              <p className="text-secondary-600">
-                Well structured, maintainable code that follows best practices for security,
-                performance, and future scalability.
-              </p>
-            </motion.div>
+            {/* Add other feature cards here */}
           </div>
         </div>
       </section>
