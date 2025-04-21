@@ -3,14 +3,15 @@
  *
  * This component renders the homepage which includes:
  * - SEO meta tags using react-helmet-async.
- * - A hero section with a large, animated heading (the LCP element) and a HeroAnimation component.
- * - A services section with a grid of animated service cards.
- * - A "Why Choose Me" section highlighting benefits.
- * - A call-to-action (CTA) section.
+ * - A hero section with a large, critical heading (the LCP element) alongside a hero animation.
+ * - Other sections for services, features, and a call-to-action.
  *
- * For LCP improvements on mobile, the critical hero content now renders immediately.
+ * Changes made for LCP improvements on mobile:
+ *  • Critical hero text now renders immediately.
+ *  • The HeroAnimation component is lazy-loaded and deferred to avoid blocking the initial render.
  */
 
+import React, { Suspense, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -25,9 +26,10 @@ import {
   DollarSign,
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import HeroAnimation from '../components/HeroAnimation';
 
-// Animation variants for non-critical sections
+// Lazy-load the HeroAnimation component so it’s not part of the critical rendering path.
+const HeroAnimationLazy = React.lazy(() => import('../components/HeroAnimation'));
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -46,6 +48,13 @@ const itemVariants = {
 };
 
 const HomePage = () => {
+  // Delay the rendering of non-critical animation after the first paint.
+  const [renderAnimation, setRenderAnimation] = useState(false);
+  useEffect(() => {
+    // This delay helps ensure that the critical text content paints first.
+    setRenderAnimation(true);
+  }, []);
+
   return (
     <>
       {/* SEO Meta Tags */}
@@ -61,7 +70,7 @@ const HomePage = () => {
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
         <div className="container-custom relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Critical Hero Text Content rendered immediately */}
+            {/* Critical Hero Text Content – Rendered immediately */}
             <div>
               <motion.h1
                 initial={{ opacity: 1, y: 0 }}
@@ -69,8 +78,7 @@ const HomePage = () => {
                 transition={{ duration: 0.01 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
               >
-                Custom Websites Designed to{' '}
-                <span className="text-accent-400">Elevate</span> Your Business
+                Custom Websites Designed to <span className="text-accent-400">Elevate</span> Your Business
               </motion.h1>
               <motion.p
                 initial={{ opacity: 1, y: 0 }}
@@ -89,24 +97,25 @@ const HomePage = () => {
                 <Link to="/pricing" className="btn-accent">
                   View Pricing
                 </Link>
-                <Link
-                  to="/contact"
-                  className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white"
-                >
+                <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white">
                   Get In Touch
                 </Link>
               </motion.div>
             </div>
 
-            {/* Hero Animation remains animated (secondary to the text) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative flex justify-center items-center"
-            >
-              <HeroAnimation />
-            </motion.div>
+            {/* Hero Animation – Lazy-loaded and rendered after the first paint */}
+            {renderAnimation && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative flex justify-center items-center"
+              >
+                <Suspense fallback={<div style={{ width: '100%', height: '100%' }} />}>
+                  <HeroAnimationLazy />
+                </Suspense>
+              </motion.div>
+            )}
           </div>
         </div>
       </section>
