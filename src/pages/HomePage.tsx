@@ -1,15 +1,14 @@
 /**
  * HomePage.tsx
  *
- * This component renders the homepage, including:
- * - SEO meta tags via react-helmet-async.
- * - A hero section with a large critical heading (LCP element), whose text is rendered instantly.
- * - Other sections that remain animated.
+ * This component renders the homepage which includes:
+ * - SEO meta tags using react-helmet-async.
+ * - A hero section with a large, critical heading (the LCP element) alongside a hero animation.
+ * - Other sections for services, features, and a call-to-action.
  *
- * Improvements for LCP on mobile:
- *  • Critical hero text renders immediately.
- *  • Animations are conditionally disabled if the user/device prefers reduced motion.
- *  • A heavy HeroAnimation component is lazy-loaded and deferred.
+ * Changes made for LCP improvements on mobile:
+ *  • Critical hero text now renders immediately.
+ *  • The HeroAnimation component is lazy-loaded and deferred to avoid blocking the initial render.
  */
 
 import React, { Suspense, useState, useEffect } from 'react';
@@ -28,10 +27,9 @@ import {
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
-// Lazy-load the HeroAnimation component so it doesn’t block the initial paint.
+// Lazy-load the HeroAnimation component so it’s not part of the critical rendering path.
 const HeroAnimationLazy = React.lazy(() => import('../components/HeroAnimation'));
 
-// Variants for the non-critical sections that remain animated.
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -50,16 +48,12 @@ const itemVariants = {
 };
 
 const HomePage = () => {
-  // Delay the rendering of non-critical animation after initial paint.
+  // Delay the rendering of non-critical animation after the first paint.
   const [renderAnimation, setRenderAnimation] = useState(false);
   useEffect(() => {
+    // This delay helps ensure that the critical text content paints first.
     setRenderAnimation(true);
   }, []);
-
-  // Check if the user prefers reduced motion (a common accessibility setting, usually on low-powered devices).
-  const prefersReducedMotion =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
     <>
@@ -76,68 +70,41 @@ const HomePage = () => {
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
         <div className="container-custom relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Critical Hero Text Content */}
+            {/* Critical Hero Text Content – Rendered immediately */}
             <div>
-              {prefersReducedMotion ? (
-                <>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-                    Custom Websites Designed to <span className="text-accent-400">Elevate</span> Your Business
-                  </h1>
-                  <p className="text-lg md:text-xl text-primary-100 mb-8 max-w-lg">
-                    Modern, responsive, and SEO-optimized websites built to convert visitors into customers and grow your online presence.
-                  </p>
-                  <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <Link to="/pricing" className="btn-accent">
-                      View Pricing
-                    </Link>
-                    <Link
-                      to="/contact"
-                      className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white"
-                    >
-                      Get In Touch
-                    </Link>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <motion.h1
-                    initial={{ opacity: 1, y: 0 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.01 }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
-                  >
-                    Custom Websites Designed to <span className="text-accent-400">Elevate</span> Your Business
-                  </motion.h1>
-                  <motion.p
-                    initial={{ opacity: 1, y: 0 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.01, delay: 0.01 }}
-                    className="text-lg md:text-xl text-primary-100 mb-8 max-w-lg"
-                  >
-                    Modern, responsive, and SEO-optimized websites built to convert visitors into customers and grow your online presence.
-                  </motion.p>
-                  <motion.div
-                    initial={{ opacity: 1, y: 0 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.01, delay: 0.02 }}
-                    className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
-                  >
-                    <Link to="/pricing" className="btn-accent">
-                      View Pricing
-                    </Link>
-                    <Link
-                      to="/contact"
-                      className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white"
-                    >
-                      Get In Touch
-                    </Link>
-                  </motion.div>
-                </>
-              )}
+              <motion.h1
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.01 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
+              >
+                Custom Websites Designed to <span className="text-accent-400">Elevate</span> Your Business
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.01, delay: 0.01 }}
+                className="text-lg md:text-xl text-primary-100 mb-8 max-w-lg"
+              >
+                Modern, responsive, and SEO-optimized websites built to convert visitors into customers and grow your online presence.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.01, delay: 0.02 }}
+                className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+              >
+                <Link to="/pricing" className="btn-accent">
+                  View Pricing
+                </Link>
+                <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white">
+                  Get In Touch
+                </Link>
+              </motion.div>
             </div>
 
-            {/* Hero Animation – Rendered only if animations are allowed */}
-            {!prefersReducedMotion && renderAnimation && (
+            {/* Hero Animation – Lazy-loaded and rendered after the first paint */}
+            {renderAnimation && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
