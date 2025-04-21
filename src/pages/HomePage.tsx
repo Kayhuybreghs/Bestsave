@@ -28,7 +28,9 @@ import {
   DollarSign,
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import HeroAnimation from '../components/HeroAnimation';
+import { lazy, Suspense } from 'react';
+
+const HeroAnimation = lazy(() => import('../components/HeroAnimation'));
 
 // Variants for animation container
 const containerVariants = {
@@ -54,14 +56,21 @@ const HomePage = () => {
     <>
       {/* SEO Meta Tags */}
       <Helmet>
-        <title>
-          KHWebDesign | Affordable HTML Websites – Fast, SEO & Mobile-Friendly
-        </title>
-        <meta
-          name="description"
-          content="Custom web development services designed to help your business grow online with modern, responsive, and SEO-optimized websites."
-        />
-      </Helmet>
+  <title>
+    KHWebDesign | Affordable HTML Websites – Fast, SEO & Mobile-Friendly
+  </title>
+  <meta
+    name="description"
+    content="Custom web development services designed to help your business grow online with modern, responsive, and SEO-optimized websites."
+  />
+  {/* Add this for preloading fonts */}
+  <link
+    rel="preload"
+    href="https://fonts.googleapis.com/css2?family=YourFont"
+    as="style"
+  />
+</Helmet>
+      
 
       {/* HERO SECTION */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
@@ -70,15 +79,14 @@ const HomePage = () => {
             {/* Hero Text Content */}
             <div>
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                // Reduced duration to help mobile devices render the critical element faster.
-                transition={{ duration: 0.4 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
-              >
-                Custom Websites Designed to{' '}
-                <span className="text-accent-400">Elevate</span> Your Business
-              </motion.h1>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: window.innerWidth < 768 ? 0.3 : 0.4 }} // Faster on mobile
+  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
+>
+  Custom Websites Designed to{' '}
+  <span className="text-accent-400">Elevate</span> Your Business
+</motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -103,17 +111,16 @@ const HomePage = () => {
                 >
                   Get In Touch
                 </Link>
-              </motion.div>
-            </div>
-            {/* Hero Animation */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative flex justify-center items-center"
-            >
-              <HeroAnimation />
-            </motion.div>
+              <motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="relative flex justify-center items-center"
+>
+  <Suspense fallback={<div>Loading Animation...</div>}>
+    <HeroAnimation />
+  </Suspense>
+</motion.div>
           </div>
         </div>
       </section>
