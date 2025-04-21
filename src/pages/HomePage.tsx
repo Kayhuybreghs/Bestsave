@@ -55,11 +55,11 @@ const HomePage = () => {
       {/* SEO Meta Tags */}
       <Helmet>
         <title>
-          KHWebDesign | Affordable HTML Websites – Fast, SEO & Mobile-Friendly
+          KHWebDesign | Custom, Affordable & SEO-Friendly Websites
         </title>
         <meta
           name="description"
-          content="Custom web development services designed to help your business grow online with modern, responsive, and SEO-optimized websites."
+          content="Affordable custom websites that are fast, mobile-friendly, and SEO-optimized, ideal for growing your business, blog, portfolio, or brand online."
         />
       </Helmet>
 
