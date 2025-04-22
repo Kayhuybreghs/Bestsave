@@ -7,11 +7,6 @@
  *  - A services section with a grid of animated service cards.
  *  - A "Why Choose Me" section highlighting benefits.
  *  - A call-to-action (CTA) section.
- *
- * Notes for Mobile / LCP optimizations:
- *  - The hero section’s animations have been slightly sped up (transition durations reduced)
- *    to potentially improve LCP on lower-powered mobile devices.
- *  - If needed, consider further reducing or conditionally disabling non-critical animations on mobile.
  */
 
 import { Link } from 'react-router-dom';
@@ -54,12 +49,38 @@ const HomePage = () => {
     <>
       {/* SEO Meta Tags */}
       <Helmet>
-        <title>
-          KHWebDesign | Custom, Affordable & SEO-Friendly Websites
-        </title>
+        {/* Basic Meta Tags */}
+        <title>KHWebDesign | Custom, Affordable & SEO-Friendly Websites</title>
         <meta
           name="description"
           content="Affordable custom websites that are fast, mobile-friendly, and SEO-optimized, ideal for growing your business, blog, portfolio, or brand online."
+        />
+
+        {/* Open Graph (Facebook, LinkedIn, WhatsApp, Discord) */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.khcustomweb.com" />
+        <meta property="og:title" content="KHWebDesign | Custom, Affordable & SEO-Friendly Websites" />
+        <meta
+          property="og:description"
+          content="Affordable custom websites that are fast, mobile-friendly, and SEO-optimized, ideal for growing your business, blog, portfolio, or brand online."
+        />
+        <meta
+          property="og:image"
+          content="https://www.khcustomweb.com/studio-0af649c910d488d830bbaa63a9e7b5d6-xfib1h5r.jpg"
+        />
+        <meta property="og:site_name" content="KHWebDesign" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.khcustomweb.com" />
+        <meta name="twitter:title" content="KHWebDesign | Custom, Affordable & SEO-Friendly Websites" />
+        <meta
+          name="twitter:description"
+          content="Affordable custom websites that are fast, mobile-friendly, and SEO-optimized, ideal for growing your business, blog, portfolio, or brand online."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.khcustomweb.com/studio-0af649c910d488d830bbaa63a9e7b5d6-xfib1h5r.jpg"
         />
       </Helmet>
 
@@ -72,7 +93,6 @@ const HomePage = () => {
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                // Reduced duration to help mobile devices render the critical element faster.
                 transition={{ duration: 0.4 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
               >
@@ -105,6 +125,7 @@ const HomePage = () => {
                 </Link>
               </motion.div>
             </div>
+
             {/* Hero Animation */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
