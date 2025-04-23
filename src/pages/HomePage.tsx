@@ -10,13 +10,13 @@ import {
   Server,
   BarChart,
   Zap,
-  Shield,
-  Rocket,
   DollarSign,
+  Rocket,
+  Shield,
 } from 'lucide-react';
 import HeroAnimation from '../components/HeroAnimation';
 
-// Variants for animation container
+// Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -25,7 +25,6 @@ const containerVariants = {
   },
 };
 
-// Variants for individual item animations
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -34,6 +33,64 @@ const itemVariants = {
     transition: { duration: 0.5, ease: 'easeOut' },
   },
 };
+
+// Data for services
+const services = [
+  {
+    icon: Code,
+    title: 'Website Development',
+    text: 'Custom-built websites using modern technologies to ensure fast loading, mobile responsiveness, and user-friendly interfaces.',
+  },
+  {
+    icon: Smartphone,
+    title: 'Responsive Design',
+    text: 'Websites that look and function perfectly on all devices, from desktops to tablets and smartphones.',
+  },
+  {
+    icon: Search,
+    title: 'SEO Optimization',
+    text: "Technical SEO implementations to improve your website's visibility in search engines and drive organic traffic.",
+  },
+  {
+    icon: Server,
+    title: 'Hosting',
+    text: 'Reliable hosting setup included with every package for optimal performance.',
+  },
+  {
+    icon: BarChart,
+    title: 'Web Analytics',
+    text: 'Implementation of analytics tools to track user behavior, conversion rates, and other important metrics.',
+  },
+  {
+    icon: Zap,
+    title: 'Performance Optimization',
+    text: 'Speed optimization techniques to ensure your website loads quickly and provides a smooth user experience.',
+  },
+];
+
+// Data for features
+const features = [
+  {
+    icon: DollarSign,
+    title: 'Affordable Pricing',
+    text: 'Quality web development at competitive rates, making professional websites accessible for businesses of all sizes.',
+  },
+  {
+    icon: Rocket,
+    title: 'Fast Turnaround',
+    text: 'Quick delivery without compromising quality, getting your website live and generating results faster.',
+  },
+  {
+    icon: Shield,
+    title: 'Reliability',
+    text: 'Consistent communication and dependable support throughout the development process and beyond.',
+  },
+  {
+    icon: Code,
+    title: 'Clean Code',
+    text: 'Well structured, maintainable code that follows best practices for security, performance, and future scalability.',
+  },
+];
 
 export default function HomePage() {
   return (
@@ -59,8 +116,7 @@ export default function HomePage() {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="text-lg md:text-xl text-primary-100 mb-8 max-w-lg"
               >
-                Modern, responsive, and SEO-optimized websites built to convert
-                visitors into customers and grow your online presence.
+                Modern, responsive, and SEO-optimized websites built to convert visitors into customers and grow your online presence.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -71,15 +127,11 @@ export default function HomePage() {
                 <Link to="/pricing" className="btn-accent">
                   View Pricing
                 </Link>
-                <Link
-                  to="/contact"
-                  className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white"
-                >
+                <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white">
                   Get In Touch
                 </Link>
               </motion.div>
             </div>
-
             {/* Hero Animation */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -113,9 +165,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
-              I offer comprehensive web development services tailored to your
-              specific business needs. My goal is to help you establish a strong
-              online presence that drives results.
+              I offer comprehensive web development services tailored to your specific business needs. My goal is to help you establish a strong online presence that drives results.
             </motion.p>
           </div>
           <motion.div
@@ -125,15 +175,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {/* Service Cards */}
-            {[
-              { icon: Code, title: 'Website Development', text: 'Custom-built websites using modern technologies to ensure fast loading, mobile responsiveness, and user-friendly interfaces.' },
-              { icon: Smartphone, title: 'Responsive Design', text: 'Websites that look and function perfectly on all devices, from desktops to tablets and smartphones.' },
-              { icon: Search, title: 'SEO Optimization', text: 'Technical SEO implementations to improve your website's visibility in search engines and drive organic traffic.' },
-              { icon: Server, title: 'Hosting', text: 'Reliable hosting setup included with every package for optimal performance.' },
-              { icon: BarChart, title: 'Web Analytics', text: 'Implementation of analytics tools to track user behavior, conversion rates, and other important metrics.' },
-              { icon: Zap, title: 'Performance Optimization', text: 'Speed optimization techniques to ensure your website loads quickly and provides a smooth user experience.' }
-            ].map(({ icon: Icon, title, text }) => (
+            {services.map(({ icon: Icon, title, text }) => (
               <motion.div key={title} variants={itemVariants} className="card p-6">
                 <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
                   <Icon size={24} />
@@ -163,4 +205,69 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-lg text-secondary-600 max-w-2xl mx-auto"
+            >
+              I'm committed to delivering high-quality web development services at affordable prices that help your business stand out in the digital landscape.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map(({ icon: Icon, title, text }) => (
+              <motion.div key={title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
+                    <Icon size={20} />
+                  </div>
+                  <h3 className="text-xl font-semibold">{title}</h3>
+                </div>
+                <p className="text-secondary-600">{text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="py-16 bg-primary-700 text-white">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-white mb-6"
+            >
+              Ready to Transform Your Online Presence?
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-primary-100 mb-8 text-lg"
+            >
+              Let's work together to create a website that truly represents your brand and helps you achieve your business goals.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+            >
+              <Link to="/pricing" className="btn-accent">
+                View Pricing
+              </Link>
+              <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50">
+                Contact Me
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+```
 
