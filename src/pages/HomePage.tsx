@@ -1,4 +1,3 @@
-```tsx
 // src/pages/HomePage.tsx
 
 import { Link } from 'react-router-dom';
@@ -269,5 +268,5 @@ export default function HomePage() {
     </>
   );
 }
-```
+
 
