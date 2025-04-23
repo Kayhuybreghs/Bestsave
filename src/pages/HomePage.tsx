@@ -9,6 +9,7 @@
  *  - A call-to-action (CTA) section.
  */
 
+
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -22,7 +23,6 @@ import {
   Rocket,
   DollarSign,
 } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
 import HeroAnimation from '../components/HeroAnimation';
 
 // Variants for animation container
@@ -45,44 +45,6 @@ const itemVariants = {
 };
 
 const HomePage = () => {
-  return (
-    <>
-      {/* SEO Meta Tags */}
-      <Helmet>
-        {/* Basic Meta Tags */}
-        <title>KHWebDesign | Custom, Affordable & SEO-Friendly Websites</title>
-        <meta
-          name="description"
-          content="Affordable custom websites that are fast, mobile-friendly, and SEO-optimized, ideal for growing your business, blog, portfolio, or brand online."
-        />
-
-        {/* Open Graph (Facebook, LinkedIn, WhatsApp, Discord) */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.khcustomweb.com" />
-        <meta property="og:title" content="KHWebDesign | Custom, Affordable & SEO-Friendly Websites" />
-        <meta
-          property="og:description"
-          content="Affordable custom websites that are fast, mobile-friendly, and SEO-optimized, ideal for growing your business, blog, portfolio, or brand online."
-        />
-        <meta
-          property="og:image"
-          content="https://www.khcustomweb.com/studio-0af649c910d488d830bbaa63a9e7b5d6-xfib1h5r.jpg"
-        />
-        <meta property="og:site_name" content="KHWebDesign" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.khcustomweb.com" />
-        <meta name="twitter:title" content="KHWebDesign | Custom, Affordable & SEO-Friendly Websites" />
-        <meta
-          name="twitter:description"
-          content="Affordable custom websites that are fast, mobile-friendly, and SEO-optimized, ideal for growing your business, blog, portfolio, or brand online."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.khcustomweb.com/studio-0af649c910d488d830bbaa63a9e7b5d6-xfib1h5r.jpg"
-        />
-      </Helmet>
 
       {/* HERO SECTION */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
