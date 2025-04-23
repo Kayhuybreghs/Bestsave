@@ -1,15 +1,3 @@
-/**
- * HomePage.tsx
- *
- * This component renders the homepage which includes:
- *  - SEO meta tags using react-helmet-async.
- *  - A hero section with a large, animated heading (the LCP element) and a HeroAnimation component.
- *  - A services section with a grid of animated service cards.
- *  - A "Why Choose Me" section highlighting benefits.
- *  - A call-to-action (CTA) section.
- */
-
-
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -45,7 +33,8 @@ const itemVariants = {
 };
 
 const HomePage = () => {
-
+  return (
+    <>
       {/* HERO SECTION */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
         <div className="container-custom relative">
@@ -133,21 +122,16 @@ const HomePage = () => {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {/* Service Card: Website Development */}
             <motion.div variants={itemVariants} className="card p-6">
               <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
                 <Code size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">
-                Website Development
-              </h3>
+              <h3 className="text-xl font-semibold mb-3">Website Development</h3>
               <p className="text-secondary-600">
                 Custom-built websites using modern technologies to ensure fast
                 loading, mobile responsiveness, and user-friendly interfaces.
               </p>
             </motion.div>
-
-            {/* Service Card: Responsive Design */}
             <motion.div variants={itemVariants} className="card p-6">
               <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
                 <Smartphone size={24} />
@@ -158,8 +142,6 @@ const HomePage = () => {
                 desktops to tablets and smartphones.
               </p>
             </motion.div>
-
-            {/* Service Card: SEO Optimization */}
             <motion.div variants={itemVariants} className="card p-6">
               <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
                 <Search size={24} />
@@ -170,8 +152,6 @@ const HomePage = () => {
                 in search engines and drive organic traffic.
               </p>
             </motion.div>
-
-            {/* Service Card: Hosting */}
             <motion.div variants={itemVariants} className="card p-6">
               <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
                 <Server size={24} />
@@ -182,8 +162,6 @@ const HomePage = () => {
                 performance.
               </p>
             </motion.div>
-
-            {/* Service Card: Web Analytics */}
             <motion.div variants={itemVariants} className="card p-6">
               <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
                 <BarChart size={24} />
@@ -194,15 +172,11 @@ const HomePage = () => {
                 conversion rates, and other important metrics.
               </p>
             </motion.div>
-
-            {/* Service Card: Performance Optimization */}
             <motion.div variants={itemVariants} className="card p-6">
               <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
                 <Zap size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">
-                Performance Optimization
-              </h3>
+              <h3 className="text-xl font-semibold mb-3">Performance Optimization</h3>
               <p className="text-secondary-600">
                 Speed optimization techniques to ensure your website loads
                 quickly and provides a smooth user experience.
@@ -237,9 +211,7 @@ const HomePage = () => {
               landscape.
             </motion.p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Feature Card: Affordable Pricing */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -248,7 +220,7 @@ const HomePage = () => {
               className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
             >
               <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
+                <div className="w-10 h-10 bg-accent-100 text-accent-600 raised rounded-full flex items-center justify-center mr-3">
                   <DollarSign size={20} />
                 </div>
                 <h3 className="text-xl font-semibold">Affordable Pricing</h3>
@@ -258,8 +230,6 @@ const HomePage = () => {
                 websites accessible for businesses of all sizes.
               </p>
             </motion.div>
-
-            {/* Feature Card: Fast Turnaround */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -268,101 +238,4 @@ const HomePage = () => {
               className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
             >
               <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
-                  <Rocket size={20} />
-                </div>
-                <h3 className="text-xl font-semibold">Fast Turnaround</h3>
-              </div>
-              <p className="text-secondary-600">
-                Quick delivery without compromising quality, getting your website live
-                and generating results faster.
-              </p>
-            </motion.div>
 
-            {/* Feature Card: Reliability */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
-                  <Shield size={20} />
-                </div>
-                <h3 className="text-xl font-semibold">Reliability</h3>
-              </div>
-              <p className="text-secondary-600">
-                Consistent communication and dependable support throughout the
-                development process and beyond.
-              </p>
-            </motion.div>
-
-            {/* Feature Card: Clean Code */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
-                  <Code size={20} />
-                </div>
-                <h3 className="text-xl font-semibold">Clean Code</h3>
-              </div>
-              <p className="text-secondary-600">
-                Well structured, maintainable code that follows best practices for security,
-                performance, and future scalability.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA SECTION */}
-      <section className="py-16 bg-primary-700 text-white">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-white mb-6"
-            >
-              Ready to Transform Your Online Presence?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-primary-100 mb-8 text-lg"
-            >
-              Let's work together to create a website that truly represents your brand and
-              helps you achieve your business goals.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
-            >
-              <Link to="/pricing" className="btn-accent">
-                View Pricing
-              </Link>
-              <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50">
-                Contact Me
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-  );
-};
-
-export default HomePage;
