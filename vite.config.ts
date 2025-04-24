@@ -1,14 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import prerender from 'vite-plugin-prerender-spa';
 
 export default defineConfig({
   plugins: [
-    react(),
-    prerender({
-      staticDir: 'dist',
-      routes: ['/', '/pricing', '/contact']
-    })
+    react()
   ],
   build: {
     rollupOptions: {
@@ -32,3 +27,4 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
 });
+
