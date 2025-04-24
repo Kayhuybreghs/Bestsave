@@ -1,8 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import prerender from 'vite-plugin-prerender-spa';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    prerender({
+      staticDir: 'dist',
+      routes: ['/', '/pricing', '/contact']
+    })
+  ],
   build: {
     rollupOptions: {
       output: {
@@ -19,9 +26,9 @@ export default defineConfig({
         drop_debugger: true,
       },
     },
-    sourcemap: true
+    sourcemap: true,
   },
   optimizeDeps: {
     exclude: ['lucide-react'],
-  }
+  },
 });
