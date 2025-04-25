@@ -325,7 +325,7 @@ const PricingPage = () => {
                 I’ll manage hosting and ongoing maintenance so you don’t have to worry about technical upkeep.
               </p>
               <div className="flex items-baseline mb-6">
-                <span className="text-3xl font-bold">€20</span>
+                <span className="text-3xl font-bold">€10</span>
                 <span className="text-secondary-600 ml-2">/month</span>
               </div>
               <p className="text-sm text-secondary-500">1-year deal</p>
@@ -345,7 +345,7 @@ const PricingPage = () => {
                 I will build an effective chatbot with predefined responses for customer support and lead generation.
               </p>
               <div className="flex items-baseline mb-6">
-                <span className="text-3xl font-bold">€300</span>
+                <span className="text-3xl font-bold">€200</span>
                 <span className="text-secondary-600 ml-2">one-time</span>
               </div>
             </motion.div>
@@ -364,7 +364,7 @@ const PricingPage = () => {
                 Integrate comprehensive analytics to track visitor behavior, clicks, and interactions.
               </p>
               <div className="flex items-baseline mb-6">
-                <span className="text-3xl font-bold">€50</span>
+                <span className="text-3xl font-bold">€30</span>
                 <span className="text-secondary-600 ml-2">one-time</span>
               </div>
             </motion.div>
