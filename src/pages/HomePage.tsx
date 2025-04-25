@@ -18,27 +18,20 @@ import HeroAnimation from '../components/HeroAnimation';
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.5, ease: 'easeOut' },
-  },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-// Data for services
+// Data for services (SEO-enhanced descriptions)
 const services = [
   {
     icon: Code,
     title: 'Website Development',
-    text: 'Custom built websites using modern technologies to ensure fast loading, mobile responsiveness, and user friendly interfaces.',
+    text: 'Custom-built websites using modern technologies to ensure fast loading, mobile responsiveness, and user-friendly interfaces.',
   },
   {
     icon: Smartphone,
@@ -48,12 +41,12 @@ const services = [
   {
     icon: Search,
     title: 'SEO Optimization & Conversion Rate Strategies',
-    text: "Technical SEO implementations coupled with data driven conversion strategies to enhance your website's visibility, improve rankings, and drive targeted organic traffic.",
+    text: "Technical SEO implementations coupled with data-driven conversion strategies to enhance your website's visibility, improve rankings, and drive targeted organic traffic.",
   },
   {
     icon: Server,
     title: 'High-Speed Web Hosting & Secure SSL Setup',
-    text: 'Reliable, high speed hosting setup with secure SSL configuration ensures optimal performance and robust security.',
+    text: 'Reliable, high-speed hosting setup with secure SSL configuration ensures optimal performance and robust security.',
   },
   {
     icon: BarChart,
@@ -67,7 +60,7 @@ const services = [
   },
 ];
 
-// Data for features
+// Data for features (SEO-enhanced)
 const features = [
   {
     icon: DollarSign,
@@ -100,6 +93,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Hero Text Content */}
             <div>
+              {/* This is an h1 – styled using motion.h1 */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -109,13 +103,14 @@ export default function HomePage() {
                 Custom Websites Designed to{' '}
                 <span className="text-accent-400">Elevate</span> Your Business
               </motion.h1>
+              {/* The paragraph is not a header but supports content */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="text-lg md:text-xl text-primary-100 mb-8 max-w-lg"
               >
-                Modern, responsive, and SEO optimized websites built to convert visitors into customers and grow your online presence.
+                Modern, responsive, and SEO-optimized websites built to convert visitors into customers and grow your online presence.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -126,7 +121,11 @@ export default function HomePage() {
                 <Link to="/pricing" className="btn-accent">
                   View Pricing
                 </Link>
-                <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white">
+                {/* Ensure Get In Touch appears with consistent styling */}
+                <Link
+                  to="/contact"
+                  className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white"
+                >
                   Get In Touch
                 </Link>
               </motion.div>
@@ -148,6 +147,7 @@ export default function HomePage() {
       <section className="section bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
+            {/* This is an h2 for the section title */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -175,10 +175,15 @@ export default function HomePage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {services.map(({ icon: Icon, title, text }) => (
-              <motion.div key={title} variants={itemVariants} className="card p-6">
+              <motion.div
+                key={title}
+                variants={itemVariants}
+                className="card p-6"
+              >
                 <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
                   <Icon size={24} />
                 </div>
+                {/* Here the h3 is used for service titles */}
                 <h3 className="text-xl font-semibold mb-3">{title}</h3>
                 <p className="text-secondary-600">{text}</p>
               </motion.div>
@@ -191,6 +196,7 @@ export default function HomePage() {
       <section className="section bg-secondary-50">
         <div className="container-custom">
           <div className="text-center mb-16">
+            {/* Section header – h2 */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -207,12 +213,19 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
-              I'm committed to delivering high quality web development services at affordable prices that help your business stand out in the digital landscape.
+              I'm committed to delivering high-quality web development services at affordable prices that help your business stand out in the digital landscape.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map(({ icon: Icon, title, text }) => (
-              <motion.div key={title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100">
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
+              >
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
                     <Icon size={20} />
@@ -230,6 +243,7 @@ export default function HomePage() {
       <section className="py-16 bg-primary-700 text-white">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto">
+            {/* CTA heading – h2 */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -268,3 +282,4 @@ export default function HomePage() {
     </>
   );
 }
+
