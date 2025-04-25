@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "postbuild": "if [ \"$SKIP_SNAP\" != \"1\" ]; then react-snap; else echo 'Skipping react-snap'; fi",
+    "postbuild": "echo \"Skipping prerender step in Vercel\"",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-sitemap": "node scripts/generate-sitemap.js"
@@ -38,15 +38,6 @@
     "typescript-eslint": "^8.3.0",
     "vite": "^5.4.2",
     "react-snap": "^1.23.0"
-  },
-  "reactSnap": {
-    "source": "dist",
-    "inlineCss": true,
-    "minifyHtml": {
-      "collapseWhitespace": true,
-      "conservativeCollapse": true
-    },
-    "puppeteerExecutablePath": "/usr/bin/chromium",
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   }
 }
+
