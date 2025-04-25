@@ -1,17 +1,9 @@
 // vite.config.ts
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-// Import ViteSSG for pre-rendering (SSG)
-import { ViteSSG } from 'vite-ssg';
 
 export default defineConfig({
-  plugins: [
-    react(),
-    // Add ViteSSG to pre-render specified routes
-    ViteSSG({
-      routes: ['/', '/pricing', '/contact', '/404'] // adjust or add routes as needed
-    }),
-  ],
+  plugins: [react()],
   build: {
     rollupOptions: {
       output: {
@@ -34,3 +26,4 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
 });
+
