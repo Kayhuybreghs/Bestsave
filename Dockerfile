@@ -28,7 +28,8 @@ RUN apt-get update && apt-get install -y \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
-# Tell Puppeteer (and thus, react-snap) to use the system Chromium instead
+# **Force Puppeteer to skip downloading its own Chromium and use the system version**
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 # Set the working directory inside the container
@@ -38,14 +39,14 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-# Copy the remainder of your application
+# Copy the remainder of the application code
 COPY . .
 
-# Build your project (this also triggers the postbuild script if defined)
+# Build your project (this also triggers your postbuild script that runs react-snap)
 RUN npm run build
 
-# Expose the desired port (if your app is served via a server)
+# Expose a port (if needed for serving your site)
 EXPOSE 3000
 
-# Start a static server to serve your built files (adjust if needed)
+# Define the startup command to serve your built files
 CMD [ "npx", "serve", "dist", "-l", "3000" ]
