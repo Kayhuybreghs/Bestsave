@@ -6,6 +6,11 @@ RUN apt-get update && apt-get install -y \
     libnss3 \
     libnss3-dev \
     libatk-bridge2.0-0 \
+    libatk1.0-0 \
+    libcups2 \
+    libdbus-1-3 \
+    libgdk-pixbuf2.0-0 \
+    libnspr4 \
     libx11-xcb1 \
     libxcomposite1 \
     libxcursor1 \
@@ -18,27 +23,25 @@ RUN apt-get update && apt-get install -y \
     libasound2 \
     libxrandr2 \
     libxss1 \
+    fonts-liberation \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
 # Create and set the working directory inside the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json (if available)
+# Copy the package.json files and install dependencies
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
 
-# Copy the remainder of your project into the container
+# Copy the rest of the application code
 COPY . .
 
 # Build your project (this runs your build scripts, including TypeScript compile and Vite build)
 RUN npm run build
 
-# (The postbuild script "react-snap" will run automatically as part of the lifecycle if defined in package.json.)
-# Expose the port (if your app is intended to run as a server; for static sites this may not be used)
+# Expose a port (if your app is served via a static server)
 EXPOSE 3000
 
-# Start command (if you're serving your built files; adjust if your deployment is a static export)
+# Define the startup command
 CMD [ "npx", "serve", "dist", "-l", "3000" ]
