@@ -38,7 +38,7 @@ const services = [
   {
     icon: Code,
     title: 'Website Development',
-    text: 'Custom-built websites using modern technologies to ensure fast loading, mobile responsiveness, and user friendly interfaces.',
+    text: 'Custom built websites using modern technologies to ensure fast loading, mobile responsiveness, and user friendly interfaces.',
   },
   {
     icon: Smartphone,
@@ -48,12 +48,12 @@ const services = [
   {
     icon: Search,
     title: 'SEO Optimization & Conversion Rate Strategies',
-    text: "Technical SEO implementations coupled with data-driven conversion strategies to enhance your website's visibility, improve rankings, and drive targeted organic traffic.",
+    text: "Technical SEO implementations coupled with data driven conversion strategies to enhance your website's visibility, improve rankings, and drive targeted organic traffic.",
   },
   {
     icon: Server,
     title: 'High-Speed Web Hosting & Secure SSL Setup',
-    text: 'Reliable, high-speed hosting setup with secure SSL configuration ensures optimal performance and robust security.',
+    text: 'Reliable, high speed hosting setup with secure SSL configuration ensures optimal performance and robust security.',
   },
   {
     icon: BarChart,
