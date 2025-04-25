@@ -6,7 +6,8 @@ import { Analytics } from '@vercel/analytics/react';
 import App from './App.tsx';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
+// Export the app element for SSR/pre-rendering capture.
+const app = (
   <StrictMode>
     <BrowserRouter>
       <HelmetProvider>
@@ -16,3 +17,7 @@ createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </StrictMode>
 );
+
+createRoot(document.getElementById('root')!).render(app);
+
+export { app };
