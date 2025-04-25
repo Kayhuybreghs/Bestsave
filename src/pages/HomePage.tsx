@@ -18,52 +18,45 @@ import HeroAnimation from '../components/HeroAnimation';
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.5, ease: 'easeOut' },
-  },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
 // Data for services
 const services = [
   {
     icon: Code,
-    title: 'Website Development',
-    text: 'Custom-built websites using modern technologies to ensure fast loading, mobile responsiveness, and user-friendly interfaces.',
+    title: 'Custom Web Development',
+    text: 'Bespoke HTML5 websites built to be responsive, mobile friendly, and SEO optimized, converting visitors into customers.',
   },
   {
     icon: Smartphone,
-    title: 'Responsive Design',
-    text: 'Websites that look and function perfectly on all devices, from desktops to tablets and smartphones.',
+    title: 'Responsive Mobile Friendly Design',
+    text: 'Websites that look and perform seamlessly on all devices, from large desktop screens to smartphones.',
   },
   {
     icon: Search,
-    title: 'SEO Optimization',
-    text: "Technical SEO implementations to improve your website's visibility in search engines and drive organic traffic.",
+    title: 'SEO Friendly Implementation',
+    text: 'On page SEO best practices and technical optimizations to boost your search rankings.',
   },
   {
     icon: Server,
-    title: 'Hosting',
-    text: 'Reliable hosting setup included with every package for optimal performance.',
+    title: 'Secure Hosting Setup',
+    text: 'Reliable hosting configurations included to ensure fast loading and top security standards.',
   },
   {
     icon: BarChart,
-    title: 'Web Analytics',
-    text: 'Implementation of analytics tools to track user behavior, conversion rates, and other important metrics.',
+    title: 'Web Analytics Integration',
+    text: 'Custom analytics setup to track user behavior, conversions, and performance metrics.',
   },
   {
     icon: Zap,
     title: 'Performance Optimization',
-    text: 'Speed optimization techniques to ensure your website loads quickly and provides a smooth user experience.',
+    text: 'Advanced caching and code minification techniques for blazing fast page loads.',
   },
 ];
 
@@ -72,22 +65,22 @@ const features = [
   {
     icon: DollarSign,
     title: 'Affordable Pricing',
-    text: 'Quality web development at competitive rates, making professional websites accessible for businesses of all sizes.',
+    text: 'Professional website design at competitive rates, accessible for businesses of all sizes.',
   },
   {
     icon: Rocket,
     title: 'Fast Turnaround',
-    text: 'Quick delivery without compromising quality, getting your website live and generating results faster.',
+    text: 'Quick delivery without compromising on quality—get live faster and start growing.',
   },
   {
     icon: Shield,
-    title: 'Reliability',
-    text: 'Consistent communication and dependable support throughout the development process and beyond.',
+    title: 'Reliability & Support',
+    text: 'Consistent communication and dependable support throughout development and beyond.',
   },
   {
     icon: Code,
-    title: 'Clean Code',
-    text: 'Well structured, maintainable code that follows best practices for security, performance, and future scalability.',
+    title: 'Clean, Scalable Code',
+    text: 'Well-structured, maintainable code following best practices for future enhancements.',
   },
 ];
 
@@ -104,10 +97,9 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
               >
-                Custom Websites Designed to{' '}
-                <span className="text-accent-400">Elevate</span> Your Business
+                Custom Web Development & Professional Website Design
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -115,7 +107,7 @@ export default function HomePage() {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="text-lg md:text-xl text-primary-100 mb-8 max-w-lg"
               >
-                Modern, responsive, and SEO-optimized websites built to convert visitors into customers and grow your online presence.
+                Responsive mobile friendly and accessible websites with fast loading times and built-in SEO best practices to grow your online presence.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -123,12 +115,8 @@ export default function HomePage() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
               >
-                <Link to="/pricing" className="btn-accent">
-                  View Pricing
-                </Link>
-                <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white">
-                  Get In Touch
-                </Link>
+                <Link to="/pricing" className="btn-accent">View Pricing</Link>
+                <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white">Get In Touch</Link>
               </motion.div>
             </div>
             {/* Hero Animation */}
@@ -153,9 +141,9 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="mb-4"
+              className="mb-4 text-2xl font-semibold"
             >
-              What I Do
+              Custom Web Development & Professional Website Design Services
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -164,16 +152,10 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
-              I offer comprehensive web development services tailored to your specific business needs. My goal is to help you establish a strong online presence that drives results.
+              I deliver responsive, mobile friendly, and SEO optimized websites tailored to help your business succeed online.
             </motion.p>
           </div>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
+          <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map(({ icon: Icon, title, text }) => (
               <motion.div key={title} variants={itemVariants} className="card p-6">
                 <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
@@ -196,9 +178,9 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="mb-4"
+              className="mb-4 text-2xl font-semibold"
             >
-              Why Choose Me
+              Why Choose My Professional Web Development Services
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -207,7 +189,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
-              I'm committed to delivering high-quality web development services at affordable prices that help your business stand out in the digital landscape.
+              High-quality development, clean code, and reliable support—all at affordable prices.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -235,7 +217,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-white mb-6"
+              className="text-white mb-6 text-3xl font-semibold"
             >
               Ready to Transform Your Online Presence?
             </motion.h2>
@@ -246,7 +228,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-primary-100 mb-8 text-lg"
             >
-              Let's work together to create a website that truly represents your brand and helps you achieve your business goals.
+              Let’s work together to create a custom, responsive, and SEO optimized website that grows your business.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -255,12 +237,8 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
             >
-              <Link to="/pricing" className="btn-accent">
-                View Pricing
-              </Link>
-              <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50">
-                Contact Me
-              </Link>
+              <Link to="/pricing" className="btn-accent">View Pricing</Link>
+              <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50">Contact Me</Link>
             </motion.div>
           </div>
         </div>
