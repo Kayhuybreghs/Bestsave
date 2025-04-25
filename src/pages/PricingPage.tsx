@@ -17,11 +17,11 @@ const PricingPage = () => {
         />
       </Helmet>
 
-      {/* Pricing Header */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
+      {/* Pricing Header Section */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto">
-            {/* Using H1 for highest-level heading */}
+            {/* Main header using H1 */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ const PricingPage = () => {
         </div>
       </section>
 
-      {/* Pricing Plans */}
+      {/* Pricing Plans Section */}
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -54,7 +54,7 @@ const PricingPage = () => {
               className="card overflow-visible"
             >
               <div className="p-8 border-b border-secondary-100">
-                {/* Using H2 for plan titles */}
+                {/* Using H2 for the plan title */}
                 <h2 className="text-2xl font-semibold mb-2">Basic</h2>
                 <p className="text-secondary-600 mb-4">
                   1-Page Responsive Website + Essential SEO & Conversion Optimization
@@ -137,6 +137,7 @@ const PricingPage = () => {
                 </span>
               </div>
               <div className="p-8 border-b border-secondary-100 bg-primary-50">
+                {/* Using H2 for the plan title */}
                 <h2 className="text-2xl font-semibold mb-2">Standard</h2>
                 <p className="text-secondary-600 mb-4">
                   5-Page Responsive Website + Advanced SEO & Responsive Design Optimization
@@ -200,7 +201,9 @@ const PricingPage = () => {
                       <span className="text-secondary-600">Delivery:</span>
                       <span className="font-medium">4 days</span>
                     </div>
-                    <p className="text-xs text-secondary-500 mt-2">3 days delivery available for +€37</p>
+                    <p className="text-xs text-secondary-500 mt-2">
+                      3 days delivery available for +€37
+                    </p>
                   </div>
                 </div>
               </div>
@@ -214,6 +217,7 @@ const PricingPage = () => {
               className="card overflow-visible"
             >
               <div className="p-8 border-b border-secondary-100">
+                {/* Using H2 for the plan title */}
                 <h2 className="text-2xl font-semibold mb-2">Premium</h2>
                 <p className="text-secondary-600 mb-4">
                   10-Page Responsive Website + Advanced SEO, Custom Design, & Conversion Optimization
@@ -277,7 +281,9 @@ const PricingPage = () => {
                       <span className="text-secondary-600">Delivery:</span>
                       <span className="font-medium">7 days</span>
                     </div>
-                    <p className="text-xs text-secondary-500 mt-2">4 days delivery available for +€65</p>
+                    <p className="text-xs text-secondary-500 mt-2">
+                      4 days delivery available for +€65
+                    </p>
                   </div>
                 </div>
               </div>
@@ -286,10 +292,11 @@ const PricingPage = () => {
         </div>
       </section>
 
-      {/* Standalone Services */}
+      {/* Standalone Services Section */}
       <section className="py-16 bg-secondary-50">
         <div className="container-custom">
           <div className="text-center mb-16">
+            {/* Using H2 for the section title */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -319,6 +326,7 @@ const PricingPage = () => {
             >
               <div className="flex items-center mb-4">
                 <Server className="text-primary-600 w-6 h-6 mr-3" />
+                {/* Using H3 for service title */}
                 <h3 className="text-xl font-semibold">Hosting & Maintenance</h3>
               </div>
               <p className="text-secondary-600 mb-4">
@@ -376,6 +384,7 @@ const PricingPage = () => {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
+            {/* Using H2 for FAQ section */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -403,6 +412,7 @@ const PricingPage = () => {
               transition={{ duration: 0.5 }}
               className="mb-6 p-6 bg-secondary-50 rounded-lg"
             >
+              {/* Using H3 for FAQ title */}
               <h3 className="text-xl font-semibold mb-2">
                 How long does it take to complete a website?
               </h3>
@@ -417,7 +427,9 @@ const PricingPage = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mb-6 p-6 bg-secondary-50 rounded-lg"
             >
-              <h3 className="text-xl font-semibold mb-2">Do you offer maintenance services?</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Do you offer maintenance services?
+              </h3>
               <p className="text-secondary-600">
                 Yes, maintenance packages are available to keep your site updated, secure, and running smoothly. Maintenance can be added to any package for an extra monthly fee.
               </p>
@@ -427,9 +439,11 @@ const PricingPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-6 p-6 bg-secondary-50 rounded-lg"
+              className="p-6 bg-secondary-50 rounded-lg"
             >
-              <h3 className="text-xl font-semibold mb-2">What payment methods do you accept?</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                What payment methods do you accept?
+              </h3>
               <p className="text-secondary-600">
                 I accept bank transfers, PayPal, and major credit cards. A 50% deposit is required to start most projects.
               </p>
@@ -441,7 +455,9 @@ const PricingPage = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="p-6 bg-secondary-50 rounded-lg"
             >
-              <h3 className="text-xl font-semibold mb-2">Do I need to provide content for my website?</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Do I need to provide content for my website?
+              </h3>
               <p className="text-secondary-600">
                 Ideally, yes. Providing your own content helps ensure authenticity and relevance. Content creation services are available if needed.
               </p>
@@ -462,8 +478,11 @@ const PricingPage = () => {
               className="p-4 bg-primary-600 rounded-lg inline-flex items-center mb-8"
             >
               <AlertCircle size={20} className="mr-2" />
-              <span className="text-sm font-medium">Custom quotes available for specific requirements</span>
+              <span className="text-sm font-medium">
+                Custom quotes available for specific requirements
+              </span>
             </motion.div>
+            {/* Using H2 for CTA heading */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -500,3 +519,4 @@ const PricingPage = () => {
 };
 
 export default PricingPage;
+
