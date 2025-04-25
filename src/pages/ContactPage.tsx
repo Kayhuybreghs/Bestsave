@@ -84,7 +84,7 @@ const ContactPage = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-primary-100 text-lg mb-6"
             >
-              Have a project in mind or curious about our SEO-optimized, responsive web solutions? Use the form below or connect directly with us.
+              Have a project in mind or curious about our SEO optimized, responsive web solutions? Use the form below or connect directly with us.
             </motion.p>
           </div>
         </div>
@@ -250,7 +250,7 @@ const ContactPage = () => {
                   <h2 className="text-2xl font-semibold">Hire Me on Fiverr</h2>
                 </div>
                 <p className="text-secondary-600 mb-6">
-                  For premium, conversion-focused web development projects, visit my Fiverr profile. See ratings, reviews, and specialized packages tailored to boost your online presence.
+                  For premium, conversion focused web development projects, visit my Fiverr profile. See ratings, reviews, and specialized packages tailored to boost your online presence.
                 </p>
                 <a
                   href="https://www.fiverr.com/khwebdesign/build-a-fast-modern-and-personal-website-for-you"
@@ -299,7 +299,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium mb-1">Working Hours</h3>
-                      <p className="text-secondary-600">Flexible – We ensure timely responses to all inquiries</p>
+                      <p className="text-secondary-600">Flexible we ensure timely responses to all inquiries</p>
                     </div>
                   </div>
                 </div>
