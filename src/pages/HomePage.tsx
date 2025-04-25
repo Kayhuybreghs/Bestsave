@@ -18,12 +18,19 @@ import HeroAnimation from '../components/HeroAnimation';
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
 };
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: 'easeOut' } },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
 };
 
 // Data for services
@@ -56,7 +63,7 @@ const services = [
   {
     icon: Zap,
     title: 'Performance Optimization',
-    text: 'Speed optimization techniques to ensure your website loads quickly and provides a smooth, responsive user experience.',
+    text: 'Speed optimization techniques to ensure your website loads quickly and delivers a smooth, responsive user experience.',
   },
 ];
 
@@ -80,7 +87,7 @@ const features = [
   {
     icon: Code,
     title: 'Clean & Scalable Code',
-    text: 'Well structured, maintainable code that follows best practices for security, performance, and future scalability.',
+    text: 'Well-structured, maintainable code built with best practices for security, performance, and scalability to support future growth.',
   },
 ];
 
@@ -108,8 +115,7 @@ export default function HomePage() {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="text-lg md:text-xl text-primary-100 mb-8 max-w-lg"
               >
-                Modern, responsive, and SEO-optimized websites built to convert
-                visitors into customers and grow your online presence.
+                Modern, responsive, and SEO-optimized websites built to convert visitors into customers and grow your online presence.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -120,10 +126,7 @@ export default function HomePage() {
                 <Link to="/pricing" className="btn-accent">
                   View Pricing
                 </Link>
-                <Link
-                  to="/contact"
-                  className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white"
-                >
+                <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white">
                   Get In Touch
                 </Link>
               </motion.div>
@@ -133,11 +136,7 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative flex justify-center items-center overflow-hidden"
-              style={{
-                backfaceVisibility: 'hidden',
-                transform: 'translate3d(0, 0, 0)',
-              }}
+              className="relative flex justify-center items-center"
             >
               <HeroAnimation />
             </motion.div>
@@ -165,9 +164,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
-              I offer comprehensive web development services tailored to your
-              specific business needs. My goal is to help you establish a strong
-              online presence that drives results.
+              I offer comprehensive web development services tailored to your specific business needs. My goal is to help you establish a strong online presence that drives results.
             </motion.p>
           </div>
           <motion.div
@@ -210,21 +207,12 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
-              I'm committed to delivering high-quality web development services
-              at affordable prices that help your business stand out in the
-              digital landscape.
+              I'm committed to delivering high-quality web development services at affordable prices that help your business stand out in the digital landscape.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map(({ icon: Icon, title, text }) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
-              >
+              <motion.div key={title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
                     <Icon size={20} />
@@ -258,8 +246,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-primary-100 mb-8 text-lg"
             >
-              Let's work together to create a website that truly represents
-              your brand and helps you achieve your business goals.
+              Let's work together to create a website that truly represents your brand and helps you achieve your business goals.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
