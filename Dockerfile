@@ -1,7 +1,7 @@
 # Use an official Node.js runtime as the base image
 FROM node:18-bullseye
 
-# Install dependencies required by Puppeteer’s Chromium and other libraries
+# Install libraries required by Chromium (and thus Puppeteer) plus install Chromium
 RUN apt-get update && apt-get install -y \
     libnss3 \
     libnss3-dev \
@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
-# **Force Puppeteer to skip downloading its own Chromium and use the system version**
+# Set environment variables BEFORE npm install so that Puppeteer does not download its bundled Chromium
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
@@ -39,14 +39,15 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-# Copy the remainder of the application code
+# Copy the rest of your application code
 COPY . .
 
-# Build your project (this also triggers your postbuild script that runs react-snap)
+# Build your project (this will also run the "postbuild" script defined in package.json)
 RUN npm run build
 
-# Expose a port (if needed for serving your site)
+# Expose port 3000 (adjust if necessary)
 EXPOSE 3000
 
-# Define the startup command to serve your built files
+# Define the startup command (here using "serve" to serve the static "dist" folder)
 CMD [ "npx", "serve", "dist", "-l", "3000" ]
+
