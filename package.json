@@ -45,7 +45,8 @@
     "minifyHtml": {
       "collapseWhitespace": true,
       "conservativeCollapse": true
-    }
+    },
+    "puppeteerExecutablePath": "/usr/bin/chromium"
   }
 }
 
