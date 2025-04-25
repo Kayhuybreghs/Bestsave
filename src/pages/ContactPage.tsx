@@ -68,23 +68,22 @@ const ContactPage = () => {
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto">
-            {/* Main heading using H1 */}
+            {/* Main Heading using H1; text-white ensures the title is white */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
-              >
+            >
               Get In Touch
             </motion.h1>
-            
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-primary-100 text-lg mb-6"
             >
-              Have a project in mind or curious about our SEO optimized, responsive web solutions? Use the form below or connect directly with us.
+              Have a project in mind or curious about our SEO-optimized, responsive web solutions? Use the form below or connect directly.
             </motion.p>
           </div>
         </div>
@@ -132,7 +131,7 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-secondary-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-lg border border-secondary-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
@@ -150,7 +149,7 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-secondary-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-lg border border-secondary-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -167,7 +166,7 @@ const ContactPage = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-secondary-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors appearance-none bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-secondary-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors appearance-none bg-white"
                     >
                       <option value="" disabled>
                         Select a subject
@@ -191,7 +190,7 @@ const ContactPage = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 rounded-lg border border-secondary-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-lg border border-secondary-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="Tell me about your project..."
                     ></textarea>
                   </div>
@@ -237,7 +236,7 @@ const ContactPage = () => {
               )}
             </motion.div>
 
-            {/* Contact Details and Fiverr Section */}
+            {/* Contact Details & Fiverr Promotion */}
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -250,7 +249,7 @@ const ContactPage = () => {
                   <h2 className="text-2xl font-semibold">Hire Me on Fiverr</h2>
                 </div>
                 <p className="text-secondary-600 mb-6">
-                  For premium, conversion focused web development projects, visit my Fiverr profile. See ratings, reviews, and specialized packages tailored to boost your online presence.
+                  For premium, conversion-focused web development projects, visit my Fiverr profile. See ratings, reviews, and specialized packages tailored to boost your online presence.
                 </p>
                 <a
                   href="https://www.fiverr.com/khwebdesign/build-a-fast-modern-and-personal-website-for-you"
@@ -299,7 +298,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium mb-1">Working Hours</h3>
-                      <p className="text-secondary-600">Flexible we ensure timely responses to all inquiries</p>
+                      <p className="text-secondary-600">Flexible – We ensure timely responses to all inquiries</p>
                     </div>
                   </div>
                 </div>
@@ -329,7 +328,7 @@ const ContactPage = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
-              Quick answers to common questions about our work processes and web development services.
+              Quick answers to common questions about our process and web development services.
             </motion.p>
           </div>
           <div className="max-w-3xl mx-auto">
@@ -358,7 +357,7 @@ const ContactPage = () => {
                 What details should I include in my message?
               </h3>
               <p className="text-secondary-600">
-                Please provide your project outline, existing website details (if any), business goals, expected timeline, and budget range.
+                Please include a brief project outline, your business goals, the expected timeline, and your budget range.
               </p>
             </motion.div>
             <motion.div
@@ -369,10 +368,10 @@ const ContactPage = () => {
               className="p-6 bg-white rounded-lg shadow-sm"
             >
               <h3 className="text-xl font-semibold mb-2">
-                Do you offer ongoing support after the website launch?
+                Do you offer support after the website launch?
               </h3>
               <p className="text-secondary-600">
-                Yes, I provide various maintenance packages to keep your site secure, updated, and fully optimized.
+                Yes, various maintenance packages are available to keep your site secure, updated, and optimized.
               </p>
             </motion.div>
           </div>
