@@ -18,19 +18,12 @@ import HeroAnimation from '../components/HeroAnimation';
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.5, ease: 'easeOut' },
-  },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
 // Data for services
@@ -109,6 +102,7 @@ export default function HomePage() {
                 Custom Websites Designed to{' '}
                 <span className="text-accent-400">Elevate</span> Your Business
               </motion.h1>
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -117,6 +111,33 @@ export default function HomePage() {
               >
                 Modern, responsive, and SEO-optimized websites built to convert visitors into customers and grow your online presence.
               </motion.p>
+
+              {/* H2: features */}
+              <div className="space-y-2 mb-6">
+                <h2 className="text-white text-2xl font-semibold">
+                  Responsive Mobile Friendly and SEO Friendly Websites
+                </h2>
+                <h2 className="text-white text-2xl font-semibold">
+                  Fast Loading Designs with Secure Hosting
+                </h2>
+                <h2 className="text-white text-2xl font-semibold">
+                  Accessible Web Design for All Audiences
+                </h2>
+              </div>
+
+              {/* H3: long-tails */}
+              <div className="space-y-1 mb-8">
+                <h3 className="text-white text-xl">
+                  Affordable Custom Websites for Small Businesses
+                </h3>
+                <h3 className="text-white text-xl">
+                  SEO Optimized Site Rebuilds for Local Companies
+                </h3>
+                <h3 className="text-white text-xl">
+                  High Traffic Fast Loading Site Solutions
+                </h3>
+              </div>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -126,7 +147,10 @@ export default function HomePage() {
                 <Link to="/pricing" className="btn-accent">
                   View Pricing
                 </Link>
-                <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white">
+                <Link
+                  to="/contact"
+                  className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white"
+                >
                   Get In Touch
                 </Link>
               </motion.div>
@@ -188,33 +212,21 @@ export default function HomePage() {
       </section>
 
       {/* WHY CHOOSE ME SECTION */}
-      <section className="section bg-secondary-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-4"
-            >
+      <section классName="section bg-secondary-50">
+        <div классName="container-custom">
+          <div классName="text-center mb-16">
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-4">
               Why Choose Me
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-lg text-secondary-600 max-w-2xl mx-auto"
-            >
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="text-lg text-secondary-600 max-w-2xl mx-auto">
               I'm committed to delivering high-quality web development services at affordable prices that help your business stand out in the digital landscape.
             </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div классName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map(({ icon: Icon, title, text }) => (
               <motion.div key={title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
+                <div классName="flex items-center mb-4">
+                  <div классName="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
                     <Icon size={20} />
                   </div>
                   <h3 className="text-xl font-semibold">{title}</h3>
@@ -228,33 +240,15 @@ export default function HomePage() {
 
       {/* CTA SECTION */}
       <section className="py-16 bg-primary-700 text-white">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-white mb-6"
-            >
+        <div классName="container-custom">
+          <div классName="text-center max-w-3xl mx-auto">
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-white mb-6">
               Ready to Transform Your Online Presence?
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-primary-100 mb-8 text-lg"
-            >
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="text-primary-100 mb-8 text-lg">
               Let's work together to create a website that truly represents your brand and helps you achieve your business goals.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link to="/pricing" className="btn-accent">
                 View Pricing
               </Link>
@@ -268,5 +262,3 @@ export default function HomePage() {
     </>
   );
 }
-
-
