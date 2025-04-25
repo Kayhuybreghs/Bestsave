@@ -31,32 +31,32 @@ const services = [
   {
     icon: Code,
     title: 'Custom Web Development',
-    text: 'Bespoke HTML5 websites built to be responsive, mobile friendly, and SEO optimized, converting visitors into customers.',
+    text: 'Bringing your brand to life with tailor-made HTML5 websites designed for performance and impact.',
   },
   {
     icon: Smartphone,
     title: 'Responsive Mobile Friendly Design',
-    text: 'Websites that look and perform seamlessly on all devices, from large desktop screens to smartphones.',
+    text: 'Flawless experiences on any device—desktop, tablet, or mobile—so your message always shines.',
   },
   {
     icon: Search,
     title: 'SEO Friendly Implementation',
-    text: 'On page SEO best practices and technical optimizations to boost your search rankings.',
+    text: 'On-page SEO best practices baked in, boosting your visibility and driving quality traffic.',
   },
   {
     icon: Server,
     title: 'Secure Hosting Setup',
-    text: 'Reliable hosting configurations included to ensure fast loading and top security standards.',
+    text: 'Rock-solid hosting configurations that keep your site fast, reliable, and protected.',
   },
   {
     icon: BarChart,
     title: 'Web Analytics Integration',
-    text: 'Custom analytics setup to track user behavior, conversions, and performance metrics.',
+    text: 'Actionable insights through custom analytics: know your audience and optimize conversions.',
   },
   {
     icon: Zap,
     title: 'Performance Optimization',
-    text: 'Advanced caching and code minification techniques for blazing fast page loads.',
+    text: 'Advanced caching and code minification for lightning-fast load times and seamless UX.',
   },
 ];
 
@@ -65,22 +65,22 @@ const features = [
   {
     icon: DollarSign,
     title: 'Affordable Pricing',
-    text: 'Professional website design at competitive rates, accessible for businesses of all sizes.',
+    text: 'Quality web design packages that fit your budget—no surprises, just stellar value.',
   },
   {
     icon: Rocket,
     title: 'Fast Turnaround',
-    text: 'Quick delivery without compromising on quality—get live faster and start growing.',
+    text: 'From concept to launch, get your site live quickly without sacrificing excellence.',
   },
   {
     icon: Shield,
     title: 'Reliability & Support',
-    text: 'Consistent communication and dependable support throughout development and beyond.',
+    text: 'Ongoing care and clear communication—your project is in dependable hands.',
   },
   {
     icon: Code,
     title: 'Clean, Scalable Code',
-    text: 'Well-structured, maintainable code following best practices for future enhancements.',
+    text: 'Future-proof development: maintainable, organized code ready for growth.',
   },
 ];
 
@@ -97,9 +97,10 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white"
               >
-                Custom Web Development & Professional Website Design
+                Bring Your Vision to Life with{' '}
+                <span className="text-accent-400">Custom Web Design</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -107,7 +108,7 @@ export default function HomePage() {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="text-lg md:text-xl text-primary-100 mb-8 max-w-lg"
               >
-                Responsive mobile friendly and accessible websites with fast loading times and built-in SEO best practices to grow your online presence.
+                Transform your online presence with engaging, fast-loading, and SEO-optimized websites that captivate and convert.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -115,8 +116,12 @@ export default function HomePage() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
               >
-                <Link to="/pricing" className="btn-accent">View Pricing</Link>
-                <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white">Get In Touch</Link>
+                <Link to="/pricing" className="btn-accent">
+                  See Plans
+                </Link>
+                <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50 focus:ring-white">
+                  Start a Project
+                </Link>
               </motion.div>
             </div>
             {/* Hero Animation */}
@@ -141,9 +146,9 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="mb-4 text-2xl font-semibold"
+              className="mb-4 text-2xl font-semibold text-primary-800"
             >
-              Custom Web Development & Professional Website Design Services
+              What We Offer
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -152,7 +157,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
-              I deliver responsive, mobile friendly, and SEO optimized websites tailored to help your business succeed online.
+              A full suite of web solutions, from eye-catching designs to rock-solid performance—everything your business needs online.
             </motion.p>
           </div>
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -161,7 +166,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
                   <Icon size={24} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary-800">{title}</h3>
                 <p className="text-secondary-600">{text}</p>
               </motion.div>
             ))}
@@ -178,9 +183,9 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="mb-4 text-2xl font-semibold"
+              className="mb-4 text-2xl font-semibold text-primary-800"
             >
-              Why Choose My Professional Web Development Services
+              Why KHWebDesign?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -189,7 +194,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
-              High-quality development, clean code, and reliable support—all at affordable prices.
+              Expert craftsmanship, transparent pricing, and heartfelt support—partner with us for a website you’ll love.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -199,7 +204,7 @@ export default function HomePage() {
                   <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
                     <Icon size={20} />
                   </div>
-                  <h3 className="text-xl font-semibold">{title}</h3>
+                  <h3 className="text-xl font-semibold text-primary-800">{title}</h3>
                 </div>
                 <p className="text-secondary-600">{text}</p>
               </motion.div>
@@ -219,7 +224,7 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="text-white mb-6 text-3xl font-semibold"
             >
-              Ready to Transform Your Online Presence?
+              Ready to Elevate Your Brand Online?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -228,7 +233,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-primary-100 mb-8 text-lg"
             >
-              Let’s work together to create a custom, responsive, and SEO optimized website that grows your business.
+              Let’s collaborate and build a stunning, high-performance website that resonates with your audience.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -237,8 +242,8 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
             >
-              <Link to="/pricing" className="btn-accent">View Pricing</Link>
-              <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50">Contact Me</Link>
+              <Link to="/pricing" className="btn-accent">See Plans</Link>
+              <Link to="/contact" className="btn bg-white text-primary-700 hover:bg-primary-50">Start a Project</Link>
             </motion.div>
           </div>
         </div>
