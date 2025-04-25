@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import HeroAnimation from '../components/HeroAnimation';
 
-// Animation variants
+// Animation variants (original code)
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -33,7 +33,7 @@ const itemVariants = {
   },
 };
 
-// Data for services
+// Data for services with improved SEO-friendly text
 const services = [
   {
     icon: Code,
@@ -63,11 +63,11 @@ const services = [
   {
     icon: Zap,
     title: 'Performance Optimization',
-    text: 'Speed optimization techniques to ensure your website loads quickly and delivers a smooth, responsive user experience.',
+    text: 'Speed optimization techniques to ensure your website loads quickly and provides a smooth, responsive user experience.',
   },
 ];
 
-// Data for features
+// Data for features with improved descriptive text
 const features = [
   {
     icon: DollarSign,
@@ -82,12 +82,12 @@ const features = [
   {
     icon: Shield,
     title: 'Reliability & Long-Term Support',
-    text: "Consistent communication and dependable support throughout the development process and beyond.",
+    text: "Consistent communication and dependable support throughout every stage of your web development journey and beyond.",
   },
   {
     icon: Code,
     title: 'Clean & Scalable Code',
-    text: 'Well-structured, maintainable code that follows best practices for security, performance, and future scalability.',
+    text: 'Well structured, maintainable code that follows best practices for security, performance, and future scalability.',
   },
 ];
 
@@ -212,7 +212,14 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map(({ icon: Icon, title, text }) => (
-              <motion.div key={title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100">
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
+              >
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
                     <Icon size={20} />
@@ -268,4 +275,3 @@ export default function HomePage() {
     </>
   );
 }
-
