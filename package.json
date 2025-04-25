@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-sitemap": "node scripts/generate-sitemap.js"
+  },
+  "reactSnap": {
+    "inlineCss": true
   },
   "dependencies": {
     "@vercel/analytics": "^1.2.2",
@@ -38,6 +42,7 @@
     "vite": "^5.4.2"
   }
 }
+
 
 
 
