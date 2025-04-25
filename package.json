@@ -46,7 +46,7 @@
       "collapseWhitespace": true,
       "conservativeCollapse": true
     },
-    "puppeteerExecutablePath": "/usr/bin/chromium"
+    "puppeteerExecutablePath": "/usr/bin/chromium-browser"
   }
 }
 
