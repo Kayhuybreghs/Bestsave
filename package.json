@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "postbuild": "react-snap",
+    "postbuild": "if [ \"$SKIP_SNAP\" != \"1\" ]; then react-snap; else echo 'Skipping react-snap'; fi",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-sitemap": "node scripts/generate-sitemap.js"
@@ -47,9 +47,6 @@
       "conservativeCollapse": true
     },
     "puppeteerExecutablePath": "/usr/bin/chromium",
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ]
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   }
 }
