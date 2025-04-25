@@ -82,12 +82,12 @@ const features = [
   {
     icon: Shield,
     title: 'Reliability & Long-Term Support',
-    text: "Consistent communication and dependable support throughout every stage of your web development journey and beyond.",
+    text: "Consistent communication and dependable support throughout the development process and beyond.",
   },
   {
     icon: Code,
     title: 'Clean & Scalable Code',
-    text: 'Well-structured, maintainable code built with best practices for security, performance, and scalability to support future growth.',
+    text: 'Well-structured, maintainable code that follows best practices for security, performance, and future scalability.',
   },
 ];
 
@@ -104,6 +104,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
+                style={{ willChange: 'transform, opacity' }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
               >
                 Custom Websites Designed to{' '}
@@ -113,6 +114,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
+                style={{ willChange: 'transform, opacity' }}
                 className="text-lg md:text-xl text-primary-100 mb-8 max-w-lg"
               >
                 Modern, responsive, and SEO-optimized websites built to convert visitors into customers and grow your online presence.
@@ -121,6 +123,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
+                style={{ willChange: 'transform, opacity' }}
                 className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
               >
                 <Link to="/pricing" className="btn-accent">
@@ -136,6 +139,7 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              style={{ willChange: 'transform, opacity' }}
               className="relative flex justify-center items-center"
             >
               <HeroAnimation />
@@ -153,6 +157,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
+              style={{ willChange: 'transform, opacity' }}
               className="mb-4"
             >
               What I Do
@@ -162,6 +167,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              style={{ willChange: 'transform, opacity' }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
               I offer comprehensive web development services tailored to your specific business needs. My goal is to help you establish a strong online presence that drives results.
@@ -172,10 +178,16 @@ export default function HomePage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+            style={{ willChange: 'transform, opacity' }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {services.map(({ icon: Icon, title, text }) => (
-              <motion.div key={title} variants={itemVariants} className="card p-6">
+              <motion.div
+                key={title}
+                variants={itemVariants}
+                style={{ willChange: 'transform, opacity' }}
+                className="card p-6"
+              >
                 <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-4">
                   <Icon size={24} />
                 </div>
@@ -196,6 +208,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
+              style={{ willChange: 'transform, opacity' }}
               className="mb-4"
             >
               Why Choose Me
@@ -205,6 +218,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              style={{ willChange: 'transform, opacity' }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
               I'm committed to delivering high-quality web development services at affordable prices that help your business stand out in the digital landscape.
@@ -212,7 +226,15 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map(({ icon: Icon, title, text }) => (
-              <motion.div key={title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100">
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                style={{ willChange: 'transform, opacity' }}
+                className="bg-white p-6 rounded-lg shadow-sm border border-secondary-100"
+              >
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mr-3">
                     <Icon size={20} />
@@ -235,6 +257,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
+              style={{ willChange: 'transform, opacity' }}
               className="text-white mb-6"
             >
               Ready to Transform Your Online Presence?
@@ -244,6 +267,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              style={{ willChange: 'transform, opacity' }}
               className="text-primary-100 mb-8 text-lg"
             >
               Let's work together to create a website that truly represents your brand and helps you achieve your business goals.
@@ -253,6 +277,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              style={{ willChange: 'transform, opacity' }}
               className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
             >
               <Link to="/pricing" className="btn-accent">
@@ -268,4 +293,3 @@ export default function HomePage() {
     </>
   );
 }
-
