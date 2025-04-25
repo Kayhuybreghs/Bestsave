@@ -38,7 +38,7 @@ const services = [
   {
     icon: Code,
     title: 'Website Development',
-    text: 'Custom-built websites using modern technologies to ensure fast loading, mobile responsiveness, and user-friendly interfaces.',
+    text: 'Custom-built websites using modern technologies to ensure fast loading, mobile responsiveness, and user friendly interfaces.',
   },
   {
     icon: Smartphone,
@@ -115,7 +115,7 @@ export default function HomePage() {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="text-lg md:text-xl text-primary-100 mb-8 max-w-lg"
               >
-                Modern, responsive, and SEO-optimized websites built to convert visitors into customers and grow your online presence.
+                Modern, responsive, and SEO optimized websites built to convert visitors into customers and grow your online presence.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -207,7 +207,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-secondary-600 max-w-2xl mx-auto"
             >
-              I'm committed to delivering high-quality web development services at affordable prices that help your business stand out in the digital landscape.
+              I'm committed to delivering high quality web development services at affordable prices that help your business stand out in the digital landscape.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
