@@ -47,23 +47,23 @@ const services = [
   },
   {
     icon: Search,
-    title: 'SEO Optimization',
-    text: "Technical SEO implementations to improve your website's visibility in search engines and drive organic traffic.",
+    title: 'SEO Optimization & Conversion Rate Strategies',
+    text: "Technical SEO implementations coupled with data-driven conversion strategies to enhance your website's visibility, improve rankings, and drive targeted organic traffic.",
   },
   {
     icon: Server,
-    title: 'Hosting',
-    text: 'Reliable hosting setup included with every package for optimal performance.',
+    title: 'High-Speed Web Hosting & Secure SSL Setup',
+    text: 'Reliable, high-speed hosting setup with secure SSL configuration ensures optimal performance and robust security.',
   },
   {
     icon: BarChart,
-    title: 'Web Analytics',
-    text: 'Implementation of analytics tools to track user behavior, conversion rates, and other important metrics.',
+    title: 'Web Analytics & Performance Tracking',
+    text: 'Implementation of advanced analytics tools to monitor user behavior, conversion metrics, and other performance indicators for continuous improvement.',
   },
   {
     icon: Zap,
     title: 'Performance Optimization',
-    text: 'Speed optimization techniques to ensure your website loads quickly and provides a smooth user experience.',
+    text: 'Speed optimization techniques to ensure your website loads quickly and delivers a smooth, responsive user experience.',
   },
 ];
 
@@ -81,13 +81,13 @@ const features = [
   },
   {
     icon: Shield,
-    title: 'Reliability',
-    text: 'Consistent communication and dependable support throughout the development process and beyond.',
+    title: 'Reliability & Long-Term Support',
+    text: "Consistent communication and dependable support throughout every stage of your web development journey and beyond.",
   },
   {
     icon: Code,
-    title: 'Clean Code',
-    text: 'Well structured, maintainable code that follows best practices for security, performance, and future scalability.',
+    title: 'Clean & Scalable Code',
+    text: 'Well-structured, maintainable code built with best practices for security, performance, and scalability to support future growth.',
   },
 ];
 
