@@ -46,7 +46,6 @@
       "collapseWhitespace": true,
       "conservativeCollapse": true
     },
-    // Ensure Puppeteer uses the installed Chromium and runs sandbox-free
     "puppeteerExecutablePath": "/usr/bin/chromium",
     "puppeteerArgs": [
       "--no-sandbox",
