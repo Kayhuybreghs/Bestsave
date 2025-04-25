@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "postbuild": "vite-ssg",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-sitemap": "node scripts/generate-sitemap.js"
@@ -19,8 +19,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.4",
-    "react-router-dom": "^6.22.2",
-    "vite-ssg": "^0.41.2"
+    "react-router-dom": "^6.22.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -37,6 +36,15 @@
     "terser": "^5.27.2",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
-    "vite": "^5.4.2"
+    "vite": "^5.4.2",
+    "react-snap": "^1.23.0"
+  },
+  "reactSnap": {
+    "inlineCss": true,
+    "minifyHtml": {
+      "collapseWhitespace": true,
+      "conservativeCollapse": true
+    }
   }
 }
+
